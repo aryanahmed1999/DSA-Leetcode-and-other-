@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+bool isPalindrome(int x){
+        if(x < 0){
+            return 0;
+        }
+    int original = x;
+    long long reversed = 0;
+    while(original > 0){
+        int remainder = original % 10;
+        reversed = reversed *10 + remainder;
+        original = original / 10;
+    }
+    if(x == reversed)
+        return 1;
+    else
+        return 0;
+
+}
+int main(){
+    int x;
+    cin >> x;
+    cout << isPalindrome(x);
+    return 0;
+}
